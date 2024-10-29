@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import AllCategory from "./AllCategory"
 import News from "./News"
 import RightSideNews from "./RightSideNews"

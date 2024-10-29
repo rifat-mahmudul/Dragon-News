@@ -1,8 +1,16 @@
+/* eslint-disable react/prop-types */
 import { NavLink } from "react-router-dom";
 import Marquee from "react-fast-marquee";
 import { Link } from 'react-router-dom';
+import { useContext } from "react";
+import { AuthContext } from "../provider/AuthProvider";
 
 const Nav = () => {
+
+    const {user} = useContext(AuthContext);
+
+    const {photoURL} = user;
+
     return (
         <div>
 
@@ -29,8 +37,8 @@ const Nav = () => {
                 </div>
 
                 <div className="flex gap-2 justify-end items-center">
-                    <div className="h-10 w-10 rounded-full border border-red-500">
-                        <img src="" alt="" />
+                    <div className="h-10 w-10 rounded-full">
+                        <img className="h-full rounded-full" src={photoURL ? `${photoURL}` : `https://img.icons8.com/?size=64&id=rrtYnzKMTlUr&format=png`} alt="" />
                     </div>
 
                     <button className="bg-blue-500 text-white text-right font-semibold py-2 px-8 rounded-md">Login</button>

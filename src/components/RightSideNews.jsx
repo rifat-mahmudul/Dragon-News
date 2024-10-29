@@ -1,13 +1,32 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable react/prop-types */
+import { useContext, useState } from 'react';
 import img1 from '../assets/qZone1.png'
 import img2 from '../assets/qZone2.png'
 import img3 from '../assets/qZone3.png'
+import { AuthContext } from '../provider/AuthProvider';
 
 
 const RightSideNews = () => {
+
+    const [google, setGoogle] = useState(null)
+
+    const {signInWithGoogle} = useContext(AuthContext);
+
+    const handleSignInGoogle = () => {
+        signInWithGoogle()
+        .then(result => {
+            setGoogle(result.user);
+        })
+        .catch(error => {
+            console.log('The Error is : ', error);
+        })
+    }
+
     return (
         <div>
             <h1 className="font-bold text-xl mb-4">Login with</h1>
-            <button className="flex items-center text-center border-2 border-blue-500 w-full py-2 px-3 rounded-lg">
+            <button onClick={handleSignInGoogle} className="flex items-center text-center border-2 border-blue-500 w-full py-2 px-3 rounded-lg">
                 <img className="h-5 mx-auto" src="https://img.icons8.com/?size=96&id=17949&format=png" alt="" />
                 <h3 className="text-blue-500 font-bold">Login With Google</h3>
             </button>
