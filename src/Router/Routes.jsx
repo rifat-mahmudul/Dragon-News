@@ -5,6 +5,7 @@ import Root from "../Layout/Root";
 import Home from "../Pages/Home";
 import About from "../Pages/About";
 import Career from "../Pages/Career";
+import DetailsNews from "../components/DetailsNews";
 
 export const router = createBrowserRouter([
     {
@@ -22,6 +23,11 @@ export const router = createBrowserRouter([
             {
                 path : '/career',
                 element : <Career></Career>,
+            },
+            {
+                path : '/detailsNews/:id',
+                element : <DetailsNews></DetailsNews>,
+                loader : () => fetch("../news.json")
             },
         ]
     },
