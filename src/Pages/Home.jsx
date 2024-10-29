@@ -1,9 +1,10 @@
-import Nav from "../components/Nav"
+import AllNews from "../components/AllNews"
+
 
 const Home = () => {
     return (
         <div>
-            <Nav></Nav>
+            <AllNews></AllNews>
         </div>
     )
 }
