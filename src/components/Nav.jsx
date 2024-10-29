@@ -7,9 +7,17 @@ import { AuthContext } from "../provider/AuthProvider";
 
 const Nav = () => {
 
-    const {user} = useContext(AuthContext);
+    const {users, logOut} = useContext(AuthContext);
 
-    const {photoURL} = user;
+    const handleLogOut = () => {
+        logOut()
+        .then(() => {
+            console.log("user logged out");
+        })
+        .catch(error => {
+            console.log('The Error is : ', error);
+        })
+    }
 
     return (
         <div>
@@ -38,10 +46,14 @@ const Nav = () => {
 
                 <div className="flex gap-2 justify-end items-center">
                     <div className="h-10 w-10 rounded-full">
-                        <img className="h-full rounded-full" src={photoURL ? `${photoURL}` : `https://img.icons8.com/?size=64&id=rrtYnzKMTlUr&format=png`} alt="" />
+                        <img className="h-full rounded-full" src={users ? `${users?.photoURL}` : `https://img.icons8.com/?size=64&id=rrtYnzKMTlUr&format=png`} alt="" />
                     </div>
 
-                    <button className="bg-blue-500 text-white text-right font-semibold py-2 px-8 rounded-md">Login</button>
+                    {users ? 
+                    <button onClick={handleLogOut} className="bg-blue-500 text-white text-right font-semibold py-2 px-8 rounded-md">log out</button>
+                        : 
+                    <button className="bg-blue-500 text-white text-right font-semibold py-2 px-8 rounded-md">log in</button>}
+                    
                 </div>
             </nav>
         </div>
