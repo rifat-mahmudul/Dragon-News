@@ -1,5 +1,6 @@
 import AllCategory from "./AllCategory"
 import News from "./News"
+import RightSideNews from "./RightSideNews"
 
 const AllNews = () => {
     return (
@@ -12,8 +13,8 @@ const AllNews = () => {
                 <News></News>
             </div>
 
-            <div className="border border-red-500 p-4">
-                3
+            <div>
+                <RightSideNews></RightSideNews>
             </div>
         </div>
     )
