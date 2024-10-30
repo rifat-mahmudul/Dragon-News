@@ -3,6 +3,7 @@ import { Link } from "react-router-dom"
 import { AuthContext } from "../provider/AuthProvider";
 import auth from "../firebase/firebase.config";
 import { updateProfile } from "firebase/auth";
+import toast from "react-hot-toast";
 
 const Register = () => {
 
@@ -30,7 +31,9 @@ const Register = () => {
             })
             .catch(error => {
                 console.log('The Error is : ', error);
-            })
+            });
+
+            toast.success('Registration Successful.')
         })
         .catch(error => {
             console.log("The error is : " , error);

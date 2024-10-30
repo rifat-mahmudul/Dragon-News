@@ -1,10 +1,14 @@
 /* eslint-disable react/no-unescaped-entities */
 
 import { useContext } from "react";
-import { Link } from "react-router-dom"
+import { Link, useLocation, useNavigate } from "react-router-dom"
 import { AuthContext } from "../provider/AuthProvider";
+import toast from "react-hot-toast";
 
 const Login = () => {
+
+    const location = useLocation();
+    const navigate = useNavigate();
 
     const {signInEmailPass} = useContext(AuthContext);
 
@@ -15,8 +19,9 @@ const Login = () => {
 
         console.log(email, password);
         signInEmailPass(email, password)
-        .then(result => {
-            console.log(result.user)
+        .then(() => {
+            toast.success('Successfully logged in');
+            navigate(location?.state ? location.state : '/')
         })
         .catch(error => {
             console.log(error);

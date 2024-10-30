@@ -4,6 +4,7 @@ import Marquee from "react-fast-marquee";
 import { Link } from 'react-router-dom';
 import { useContext } from "react";
 import { AuthContext } from "../provider/AuthProvider";
+import toast from "react-hot-toast";
 
 const Nav = () => {
 
@@ -12,7 +13,7 @@ const Nav = () => {
     const handleLogOut = () => {
         logOut()
         .then(() => {
-            console.log("user logged out");
+            toast.error("user logged out");
         })
         .catch(error => {
             console.log('The Error is : ', error);

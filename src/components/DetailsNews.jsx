@@ -6,8 +6,6 @@ const DetailsNews = () => {
     const {_id} = useParams();
     const newses = useLoaderData();
     const news = newses.find(news => news._id == _id);
-    console.log(news);
-
     const {image_url,title, details} = news;
 
     return (

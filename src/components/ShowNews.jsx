@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const ShowNews = ({news}) => {
 
-    const {_id, author, title, thumbnail_url, details, rating, total_view} = news;
+    const {id, author, title, thumbnail_url, details, rating, total_view} = news;
 
     return (
         <div className="mb-5">
@@ -33,7 +33,7 @@ const ShowNews = ({news}) => {
                 <div>
                     <p className="mt-3 border-b border-gray-300 pb-4">
                         {details && details.slice(0, 200)}
-                        <Link to={`/detailsNews/:${_id}`}><span className="text-red-500 font-bold"> Read More</span></Link>
+                        <Link to={`/detailsNews/:${id}`}><span className="text-red-500 font-bold"> Read More</span></Link>
                     </p>
                 </div>
 
