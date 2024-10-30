@@ -8,6 +8,7 @@ import Career from "../Pages/Career";
 import DetailsNews from "../components/DetailsNews";
 import Login from "../components/Login";
 import Register from "../components/Register";
+import PrivateRoute from "./PrivateRoute";
 
 export const router = createBrowserRouter([
     {
@@ -28,7 +29,7 @@ export const router = createBrowserRouter([
             },
             {
                 path : '/detailsNews/:id',
-                element : <DetailsNews></DetailsNews>,
+                element : <PrivateRoute><DetailsNews></DetailsNews></PrivateRoute>,
                 loader : () => fetch("../news.json")
             },
             {

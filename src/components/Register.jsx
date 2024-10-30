@@ -1,6 +1,8 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom"
 import { AuthContext } from "../provider/AuthProvider";
+import auth from "../firebase/firebase.config";
+import { updateProfile } from "firebase/auth";
 
 const Register = () => {
 
@@ -16,7 +18,19 @@ const Register = () => {
         console.log(name, photoURL, email, password);
         createUser(email, password)
         .then(result => {
-            console.log(result.user)
+            console.log(result.user);
+
+            //update Profile
+            updateProfile(auth.currentUser, {
+                displayName : name,
+                photoURL : photoURL,
+            })
+            .then(() => {
+                console.log('Profile Updated')
+            })
+            .catch(error => {
+                console.log('The Error is : ', error);
+            })
         })
         .catch(error => {
             console.log("The error is : " , error);
