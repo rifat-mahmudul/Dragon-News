@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react"
-import { NavLink } from "react-router-dom";
 
 const AllCategory = () => {
 
@@ -14,7 +13,7 @@ const AllCategory = () => {
     return (
         <div>
             <h1 className="font-bold text-xl mb-4">All Category</h1>
-            {categories.map(category => <NavLink to={`category/:${category.id}`} className="block bg-gray-200 py-2 px-5 w-full mb-5 rounded-lg text-center" key={category.id}>{category.name}</NavLink>)}
+            {categories.map(category => <button className="block bg-gray-200 py-2 px-5 w-full mb-5 rounded-lg text-center" key={category.id}>{category.name}</button>)}
         </div>
     )
 }

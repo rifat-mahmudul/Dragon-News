@@ -1,4 +1,4 @@
-import { Link, useLoaderData, useNavigate, useParams } from "react-router-dom"
+import { Link, useLoaderData, useParams } from "react-router-dom"
 import RightSideNews from "./RightSideNews";
 
 const DetailsNews = () => {

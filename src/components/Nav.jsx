@@ -52,7 +52,9 @@ const Nav = () => {
                     {users ? 
                     <button onClick={handleLogOut} className="bg-blue-500 text-white text-right font-semibold py-2 px-8 rounded-md">log out</button>
                         : 
-                    <button className="bg-blue-500 text-white text-right font-semibold py-2 px-8 rounded-md">log in</button>}
+                    <Link to='/login'>
+                        <button className="bg-blue-500 text-white text-right font-semibold py-2 px-8 rounded-md">log in</button>
+                    </Link>}
                     
                 </div>
             </nav>
