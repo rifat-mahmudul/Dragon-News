@@ -36,4 +36,4 @@ Whether it's breaking news, technology, sports, or entertainment, Dragon News ke
 
 ## 🌐 Live Demo
 
-Experience the live version of the BPL DREAM 11 website: [https://dragon-news-42df3.web.app/]
+Experience the live version of the Dragon News website: [https://dragon-news-42df3.web.app/]
